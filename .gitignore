@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+venv/
+.venv/
+
+# API Keys
+.env
+*.key
+config/api_keys.yaml
+
+# 결과 파일
+logs/
+results/
+output/
+*.json
+*.log
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
