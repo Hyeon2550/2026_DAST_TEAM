@@ -9,7 +9,7 @@ from pathlib import Path
 
 # Module imports
 from modules.docker_manager import DockerManager
-from modules.scanner import run_nmap_scan
+from modules.scanner import execute_full_scan
 
 class AIBB:
     def __init__(self):
@@ -59,10 +59,10 @@ class AIBB:
             print("[ERROR] Failed to start Docker")
             return
         
-        # Step 2: Run Scanner
-        print(f"\n[Step 2] Port scanning")
+        # Step 2: Run Scanner (Nmap + Nuclei)
+        print(f"\n[Step 2] Scanning (Nmap + Nuclei)")
         try:
-            scan_result = run_nmap_scan("127.0.0.1", str(target['port']))
+            scan_result = execute_full_scan("127.0.0.1", target['port'])
             print(f"[Scan Result]\n{scan_result}")
         except Exception as e:
             print(f"[ERROR] Scanner failed: {e}")
